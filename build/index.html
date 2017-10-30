@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="calculatorApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link media="all" rel="stylesheet" href="http://localhost:3000/styles/main.css">
+    <link media="all" rel="stylesheet" href="http://localhost:3000/styles/angular-material.css">
+    <title>Document</title>
+</head>
+
+<body ng-controller="MainController" ng-style="{'background': 'rgb(16,108,200)', 'min-height':'100%'}">
+    <div class="container">
+        <div class="section">
+            <div ng-cloak>
+                <md-content>
+                  <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="Description Products">
+                      <md-content class="products" ng-init="getProducts();">
+                        <h1 class="md-display-2">Description Products</h1>
+                            <form class="navbar-form" role="search">
+                                <div class="form-group">
+                                    <input type="text"  ng-change="getProducts(myValue)" ng-model="myValue" class="form-control" placeholder="Search">
+                                </div>
+                                <button type="submit" class="btn btn-default">Submit</button>
+                            </form>
+                            <div>
+                                <div ng-if="load">
+                                    <div ng-repeat="product in products" class="col-xs-12 col-md-6 element hvr-underline-from-left">
+                                        <h5>name : {{ product.name }}</h5>
+                                        <div ng-repeat="(key,val) in product.properties">
+                                            <h5>{{ key }} : {{ val }}</h5>
+                                        </div>
+                                        <button class="btn" ng-click="addToSumm(product)">Add to Summ</button>
+                                        <button class="btn" ng-click="deleteProduct(product)">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                      </md-content>
+                    </md-tab>
+                    <md-tab label="Add Product">
+                      <md-content class="products">
+                        <h1 class="md-display-2">Add Product</h1>
+                        <form class="form" name="answerForm">
+                            <div class="form-group">
+                                <label for="answerText">Name of product</label><br>
+                                <input class="form-control" id="answerText" ng-model="answer.name" required placeholder="Enter the name of product" />
+                            </div>
+                            <div class="form-group">
+                                <label for="answerAuthor">Calories</label><br>
+                                <input class="form-control" id="answerAuthor" ng-model="answer.calories" required placeholder="Enter the calories" />
+                            </div>
+                            <div class="form-group">
+                                <label for="answerAuthor">Protein</label><br>
+                                <input class="form-control" id="answerAuthor" ng-model="answer.protein" required placeholder="Enter the protein" />
+                            </div>
+                            <div class="form-group">
+                                <label for="answerAuthor">Fats</label><br>
+                                <input class="form-control" id="answerAuthor" ng-model="answer.fats" required placeholder="Enter the fats" />
+                            </div>
+                            <div class="form-group">
+                                <label for="answerAuthor">Carbohydrates</label><br>
+                                <input class="form-control" id="answerAuthor" ng-model="answer.carbohydrates" required placeholder="Enter the carbohydrates" />
+                            </div>
+                            <p><button class="btn" ng-click="save(answer, answerForm)">Add</button></p>
+                        </form>
+                      </md-content>
+                    </md-tab>
+                    <md-tab label="Amount of calories">
+                        <div layout="column" style="height:600px" ng-cloak>
+                            <md-toolbar md-scroll-shrink ng-if="true" ng-controller="TitleController">
+                            <div class="md-toolbar-tools">
+                                <h3><span>{{title}}</span></h3>
+                            </div>
+                            </md-toolbar>
+                            <md-content flex>
+                            <md-list>
+                                <md-list-item class="md-3-line" ng-repeat="item in productsInSumm">
+                                    <div class="md-list-item-text">
+                                        <h3>{{item.name}}</h3>
+                                        <div class="md-list-item-text" ng-repeat="(key, val) in item.properties">
+                                            <p>{{ key }} : {{ val }}</p>
+                                        </div>
+                                    </div>
+                                    <md-divider inset></md-divider>
+                                </md-list-item>
+                                <md-list-item class="md-3-line">
+                                    <h3>Total calories:&nbsp{{ totalSumm }}</h3>
+                                </md-list-item>
+                            </md-list>
+                            </md-content>
+                        </div>
+                    </md-tab>
+                  </md-tabs>
+                </md-content>
+              </div>
+        </div>
+    </div>
+    </div>
+</body>
+<script src="http://localhost:3000/scripts/angular.js"></script>
+<script src="http://localhost:3000/scripts/MainController.js"></script>
+<script src="http://localhost:3000/scripts/jquery-3.2.1.min.js"></script>
+<script src="http://localhost:3000/scripts/angular-material.js"></script>
+<script src="http://localhost:3000/scripts/angular-aria.js"></script>
+<script src="http://localhost:3000/scripts/angular-animate.js"></script>
+<script src="http://localhost:3000/scripts/angular-route.js"></script>
+<script src="http://localhost:3000/scripts/header.js"></script>
+
+</html>

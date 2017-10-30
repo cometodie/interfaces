@@ -1,0 +1,38 @@
+[
+    {
+        "name": "абрикос",
+        "properties": {
+            "calories": "44",
+            "protein": "0.9",
+            "fats": "0.1",
+            "carbohydrates": "9"
+        }
+    },
+    {
+        "name": "яблоко",
+        "properties": {
+            "calories": "47",
+            "protein": "0",
+            "fats": "0",
+            "carbohydrates": "9"
+        }
+    },
+    {
+        "name": "Арбуз",
+        "properties": {
+            "calories": "25",
+            "protein": "0.6",
+            "fats": "0.1",
+            "carbohydrates": "5.8"
+        }
+    },
+    {
+        "name": "1234567",
+        "properties": {
+            "calories": "234567",
+            "protein": "23456",
+            "fats": "123456",
+            "carbohydrates": "123456"
+        }
+    }
+]
