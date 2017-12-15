@@ -10,7 +10,6 @@
     <link media="all" rel="stylesheet" href="http://localhost:3000/styles/angular-material.css">
     <title>Document</title>
 </head>
-
 <body ng-controller="MainController" ng-style="{'background': 'rgb(16,108,200)', 'min-height':'100%'}">
     <div class="container">
         <div class="section">
@@ -33,6 +32,7 @@
                                         <div ng-repeat="(key,val) in product.properties">
                                             <h5>{{ key }} : {{ val }}</h5>
                                         </div>
+                                        <input class="form-control" type="number" placeholder="count of calories" ng-model="countCalories" value="100">
                                         <button class="btn" ng-click="addToSumm(product)">Add to Summ</button>
                                         <button class="btn" ng-click="deleteProduct(product)">Delete</button>
                                     </div>
@@ -94,6 +94,7 @@
                         </div>
                     </md-tab>
                   </md-tabs>
+                  <toaster-container toaster-options="{'newest-on-top':false,'time-out': 5000}"></toaster-container>
                 </md-content>
               </div>
         </div>
@@ -101,6 +102,7 @@
     </div>
 </body>
 <script src="http://localhost:3000/scripts/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/1.1.0/toaster.min.js"></script>
 <script src="http://localhost:3000/scripts/MainController.js"></script>
 <script src="http://localhost:3000/scripts/jquery-3.2.1.min.js"></script>
 <script src="http://localhost:3000/scripts/angular-material.js"></script>

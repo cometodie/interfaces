@@ -3,14 +3,15 @@ var calcApp = angular.module("calculatorApp", [
     'ngRoute',
     'ngMaterial',
     'ngAria',
+    'toaster',
 ]);
 
-calcApp.controller("MainController", function($scope, $http, $route){
+calcApp.controller("MainController", function($scope, $http, $route, toaster){
     $scope.products = [];
     $scope.productsInSumm = [];
     $scope.totalSumm = 0;
     $scope.load = false;
-
+    $scope.countCalories = 100;
     $scope.getProducts = function(name){
       if(name == undefined){
         $scope.load = false;
@@ -66,10 +67,11 @@ calcApp.controller("MainController", function($scope, $http, $route){
             $scope.products = data.data;
         });
     }
-
     $scope.addToSumm = function(product){
       if(!$scope.productsInSumm.includes(product)){
+        product.calories = $scope.countCalories;
         $scope.productsInSumm.push(product);
+        toaster.pop('success', "Add to Summ", "product was successfuly added");
       }
       $scope.totalSumm = 0;
       for (var i = 0; i < $scope.productsInSumm.length; i++) {
@@ -85,6 +87,7 @@ calcApp.controller("MainController", function($scope, $http, $route){
       }
       return element > 1;
     }
+    
     function parseData(array){
       
       const extraByteMap = [ 1, 1, 1, 1, 2, 2, 3, 0 ];
