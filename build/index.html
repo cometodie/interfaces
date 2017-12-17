@@ -50,19 +50,19 @@
                             </div>
                             <div class="form-group">
                                 <label for="answerAuthor">Calories</label><br>
-                                <input class="form-control" id="answerAuthor" type="number" min="0" ng-model="answer.calories" required placeholder="Enter the calories" />
+                                <input class="form-control" id="answerAuthor" type="number" step="0.01" min="0" ng-model="answer.calories" required placeholder="Enter the calories" />
                             </div>
                             <div class="form-group">
                                 <label for="answerAuthor">Protein</label><br>
-                                <input class="form-control" id="answerAuthor" type="number" min="0" ng-model="answer.protein" required placeholder="Enter the protein" />
+                                <input class="form-control" id="answerAuthor" type="number" step="0.01" min="0" ng-model="answer.protein" required placeholder="Enter the protein" />
                             </div>
                             <div class="form-group">
                                 <label for="answerAuthor">Fats</label><br>
-                                <input class="form-control" id="answerAuthor" type="number" min="0" ng-model="answer.fats" required placeholder="Enter the fats" />
+                                <input class="form-control" id="answerAuthor" type="number" step="0.01" min="0" ng-model="answer.fats" required placeholder="Enter the fats" />
                             </div>
                             <div class="form-group">
                                 <label for="answerAuthor">Carbohydrates</label><br>
-                                <input class="form-control" id="answerAuthor" type="number" min="0" ng-model="answer.carbohydrates" required placeholder="Enter the carbohydrates" />
+                                <input class="form-control" id="answerAuthor" type="number" step="0.01" min="0" ng-model="answer.carbohydrates" required placeholder="Enter the carbohydrates" />
                             </div>
                             <p><button class="btn" ng-click="save(answer, answerForm)">Add</button></p>
                         </form>

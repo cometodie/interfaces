@@ -23,11 +23,18 @@ calcApp.controller("MainController", function($scope, $route, toaster, productSe
   };
 
   $scope.save = function(data, formName){
+    debugger;
+    $scope.load = true;
       $scope.products = productService.save(data, formName);
+      $scope.getProducts();
+      toaster.pop('success', "Product save", "product was successfuly added");
+      $scope.load = false;
   }
 
   $scope.deleteProduct = function(product){
       $scope.products = productService.deleteProduct(product);
+      $scope.getProducts();
+      toaster.pop('success', "Product delete", "product was successfuly deleted");
   }
 
   $scope.addToSumm = function(product, weight){
@@ -51,6 +58,7 @@ calcApp.controller("MainController", function($scope, $route, toaster, productSe
       if($scope.productsInSumm[i].name == product.name){
         $scope.totalSumm -= $scope.productsInSumm[i].properties.calories;
         $scope.productsInSumm.splice(i, 1);
+        toaster.pop('success', "Product delete", "product was successfuly deleted from summ");
       }
     }
   }

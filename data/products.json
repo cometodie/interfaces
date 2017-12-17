@@ -27,30 +27,21 @@
         }
     },
     {
-        "name": "1234567",
+        "name": "банан",
         "properties": {
-            "calories": "234567",
-            "protein": "23456",
-            "fats": "123456",
-            "carbohydrates": "123456"
+            "calories": 89,
+            "protein": 1.1,
+            "fats": 0.3,
+            "carbohydrates": 23
         }
     },
     {
-        "name": "fasdfsd",
+        "name": "Киви",
         "properties": {
-            "calories": "32432",
-            "protein": "4543",
-            "fats": "345",
-            "carbohydrates": "534534"
-        }
-    },
-    {
-        "name": "asdf",
-        "properties": {
-            "calories": "456",
-            "protein": "4567",
-            "fats": "56",
-            "carbohydrates": "56"
+            "calories": 61,
+            "protein": 1.1,
+            "fats": 0.5,
+            "carbohydrates": 15
         }
     }
 ]
