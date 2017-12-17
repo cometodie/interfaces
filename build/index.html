@@ -26,14 +26,14 @@
                                 <button type="submit" class="btn btn-default">Submit</button>
                             </form>
                             <div>
-                                <div ng-if="load">
+                                <div ng-if="!load">
                                     <div ng-repeat="product in products" class="col-xs-12 col-md-6 element hvr-underline-from-left">
                                         <h5>name : {{ product.name }}</h5>
                                         <div ng-repeat="(key,val) in product.properties">
                                             <h5>{{ key }} : {{ val }}</h5>
                                         </div>
-                                        <input class="form-control" type="number" placeholder="count of calories" ng-model="countCalories" value="100">
-                                        <button class="btn" ng-click="addToSumm(product)">Add to Summ</button>
+                                        <input class="form-control" type="number" placeholder="weight" ng-model="weight">
+                                        <button class="btn" ng-click="addToSumm(product, weight)">Add to Summ</button>
                                         <button class="btn" ng-click="deleteProduct(product)">Delete</button>
                                     </div>
                                 </div>
@@ -46,23 +46,23 @@
                         <form class="form" name="answerForm">
                             <div class="form-group">
                                 <label for="answerText">Name of product</label><br>
-                                <input class="form-control" id="answerText" ng-model="answer.name" required placeholder="Enter the name of product" />
+                                <input class="form-control" id="answerText" type="number" min="0" ng-model="answer.name" required placeholder="Enter the name of product" />
                             </div>
                             <div class="form-group">
                                 <label for="answerAuthor">Calories</label><br>
-                                <input class="form-control" id="answerAuthor" ng-model="answer.calories" required placeholder="Enter the calories" />
+                                <input class="form-control" id="answerAuthor" type="number" min="0" ng-model="answer.calories" required placeholder="Enter the calories" />
                             </div>
                             <div class="form-group">
                                 <label for="answerAuthor">Protein</label><br>
-                                <input class="form-control" id="answerAuthor" ng-model="answer.protein" required placeholder="Enter the protein" />
+                                <input class="form-control" id="answerAuthor" type="number" min="0" ng-model="answer.protein" required placeholder="Enter the protein" />
                             </div>
                             <div class="form-group">
                                 <label for="answerAuthor">Fats</label><br>
-                                <input class="form-control" id="answerAuthor" ng-model="answer.fats" required placeholder="Enter the fats" />
+                                <input class="form-control" id="answerAuthor" type="number" min="0" ng-model="answer.fats" required placeholder="Enter the fats" />
                             </div>
                             <div class="form-group">
                                 <label for="answerAuthor">Carbohydrates</label><br>
-                                <input class="form-control" id="answerAuthor" ng-model="answer.carbohydrates" required placeholder="Enter the carbohydrates" />
+                                <input class="form-control" id="answerAuthor" type="number" min="0" ng-model="answer.carbohydrates" required placeholder="Enter the carbohydrates" />
                             </div>
                             <p><button class="btn" ng-click="save(answer, answerForm)">Add</button></p>
                         </form>
@@ -84,6 +84,7 @@
                                             <p>{{ key }} : {{ val }}</p>
                                         </div>
                                     </div>
+                                    <button class="btn" ng-click="deleteFromSumm(item)">Delete</button>
                                     <md-divider inset></md-divider>
                                 </md-list-item>
                                 <md-list-item class="md-3-line">
@@ -104,6 +105,7 @@
 <script src="http://localhost:3000/scripts/angular.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/1.1.0/toaster.min.js"></script>
 <script src="http://localhost:3000/scripts/MainController.js"></script>
+<script src="http://localhost:3000/scripts/productService.js"></script>
 <script src="http://localhost:3000/scripts/jquery-3.2.1.min.js"></script>
 <script src="http://localhost:3000/scripts/angular-material.js"></script>
 <script src="http://localhost:3000/scripts/angular-aria.js"></script>

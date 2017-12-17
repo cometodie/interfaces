@@ -45,21 +45,12 @@
         }
     },
     {
-        "name": "fasdfsd",
+        "name": "asdf",
         "properties": {
-            "calories": "32432",
-            "protein": "4543",
-            "fats": "345",
-            "carbohydrates": "534534"
-        }
-    },
-    {
-        "name": "fasdfsd",
-        "properties": {
-            "calories": "32432",
-            "protein": "4543",
-            "fats": "345",
-            "carbohydrates": "534534"
+            "calories": "456",
+            "protein": "4567",
+            "fats": "56",
+            "carbohydrates": "56"
         }
     }
 ]

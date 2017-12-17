@@ -17,7 +17,7 @@ app.use("/img", express.static(path + '/build/img'));
 
 app.post("/getProducts", function (request, response) {
   if(!request.body) return response.sendStatus(400);
-  var obj = {};
+    var obj = {};
     obj.products = fs.readFileSync("data/products.json");
     response.send(obj);
 });
